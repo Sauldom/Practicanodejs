@@ -118,3 +118,6 @@ voy a crear un par de metodos por si tengo que meter datos a mano
 creo un metodo post para meter anuncios a mano y para listarlos
 
 me salio un error y era por una mala sintaxis en una exportacion del modulo
+
+hemos ya hecho un listado de filtros algunos ya funcionan como e de nombre
+y la paginacion lo hemos metido como metodo estatico de Anuncio
