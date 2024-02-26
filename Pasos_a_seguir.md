@@ -72,3 +72,34 @@ en index,j de routes
 const { query, validationResult} = require ('express-validator');
 clase 4 1:09
 
+
+ya tengo mongo db instalado
+sudo systemctl start mongod
+systemctl status mongod
+
+lo inicio y compruebo su status
+
+mongosh ya lo tengo instalado
+mongosh
+
+en mongosh
+use nodepop 
+.exit para salir
+
+mirar mongo db queries o en las diapositivas interesantes
+tip con .find $gt y $lg greater than lesser than podemos filtrar mayor y menor que o gte lge
+findAndModify query update
+
+conectar mongoose
+npm install mongoose --save
+
+creo un archivo en la carpeta .exit/lib llamado connectMongoose.js
+he puesto la base de datos por defecto nodepop y configuro y modulo las conexciones
+
+
+pongo el require en app.js
+y al ejecutar en npm run dev ya eme conecta bien a nodepop
+
+creamos un carpeta models un archivo models.js
+y creamos un modelo definimos un esquema etc
+
