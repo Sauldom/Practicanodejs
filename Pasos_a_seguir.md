@@ -103,3 +103,18 @@ y al ejecutar en npm run dev ya eme conecta bien a nodepop
 creamos un carpeta models un archivo models.js
 y creamos un modelo definimos un esquema etc
 
+modificamos en el error handler de la app para que responda a los errores
+de la api
+if(req.originalUrl.startsWith('/api/')){
+    res.json({error:err.message});
+    return;
+  }
+
+a la hora de comprobar metodos en el browser solo se pueden hacer 
+peticiones de tipo get lo demas lo tenemos que comprobar con postman
+
+voy a crear un par de metodos por si tengo que meter datos a mano 
+
+creo un metodo post para meter anuncios a mano y para listarlos
+
+me salio un error y era por una mala sintaxis en una exportacion del modulo
