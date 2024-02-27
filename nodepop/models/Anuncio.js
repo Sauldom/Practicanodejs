@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 //schema
 
 
-var anuncioSchema = mongoose.Schema({
+const anuncioSchema = mongoose.Schema({
     nombre: {type: String, index: true},
     venta: {type: Boolean},
     precio:{type: Number, index: true} ,
@@ -14,13 +14,21 @@ var anuncioSchema = mongoose.Schema({
 
 
 //metodos
-anuncioSchema.statics.listar = function(filter, skip, limit, sortRango){
+anuncioSchema.statics.listar = function(filter, skip, limit,sort, filterTag){
     const query = Anuncio.find(filter);
+    if (filterTag){
+        query.where('tags').in([filterTag]);
+    }
+    
     query.skip(skip);
     query.limit(limit);
-    query.sort(sortRango);
+    query.sort(sort);       
     return query.exec();
 }
+
+anuncioSchema.statics.listarTags = function() {
+    return Anuncio.distinct('tags').exec();
+};
 // modelo de anuncio
 
 const Anuncio = mongoose.model('Anuncio', anuncioSchema);

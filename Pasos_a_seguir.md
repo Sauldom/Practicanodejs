@@ -121,3 +121,7 @@ me salio un error y era por una mala sintaxis en una exportacion del modulo
 
 hemos ya hecho un listado de filtros algunos ya funcionan como e de nombre
 y la paginacion lo hemos metido como metodo estatico de Anuncio
+
+Creado script de ejecucion script_inicio.js
+se conecta a la base de datos borra todos inserta una array de objetos y luego importante
+cierra la conexion con la base de datos

@@ -2,6 +2,13 @@
 
 ## Development
 
+
+# SCRIPT para iniciar la base de datos con datos
+* BORRA TODOS LOS DATOS ANTIGUOS
+
+```js
+    npm run script_inicio.js
+```
 ### Modo dev
         
     ```js
@@ -17,9 +24,5 @@ hemos creado un par de metodos para probar un listado general y un introducir da
 # Introducir datos
     POST /api/anuncios (body)
 
-# SCRIPT para iniciar la base de datos con datos
 
-```js
-    node script_inicio.js
-```
 
