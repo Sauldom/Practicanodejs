@@ -17,5 +17,9 @@ hemos creado un par de metodos para probar un listado general y un introducir da
 # Introducir datos
     POST /api/anuncios (body)
 
+# SCRIPT para iniciar la base de datos con datos
 
+```js
+    node script_inicio.js
+```
 
