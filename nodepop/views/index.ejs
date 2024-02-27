@@ -6,7 +6,19 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>    
+    <p>Welcome to <%= title %></p>  
+
+    <ul>
+      <% listaAnuncios.forEach(anuncio => { %>
+        <li>
+          <p>Nombre: <%= anuncio.nombre %></p>
+          <p>Precio: <%= anuncio.precio %></p>
+          <p>A la venta: <%=anuncio.venta ? 'Esta a la venta' : 'no esta a la venta'%></p>
+          <p>Foto: <img src="<%= anuncio.foto %>" alt="Foto del anuncio"></p>
+          <p>Tags: <%= anuncio.tags.join(', ') %></p>
+        </li>
+      <% }); %>
+    </ul>
 
   </body>
 </html>
