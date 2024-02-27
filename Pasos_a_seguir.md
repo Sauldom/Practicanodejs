@@ -125,3 +125,9 @@ y la paginacion lo hemos metido como metodo estatico de Anuncio
 Creado script de ejecucion script_inicio.js
 se conecta a la base de datos borra todos inserta una array de objetos y luego importante
 cierra la conexion con la base de datos
+
+
+implementados todas las querys y los filtros
+
+ya se puede visualizar todo para ello hemos metido mano en index js y en views/indes.ejs
+

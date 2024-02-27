@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 //rutas del api
 app.use('/api/anuncios', require('./routes/api/anuncios'));
 
