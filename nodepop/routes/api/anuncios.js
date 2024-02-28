@@ -24,7 +24,8 @@ router.get('/', async(req,res,next)=>{
         const filterNombre= req.query.nombre;
         //http://127.0.0.1:3000/api/anuncios?venta=true o false si no esta e venta
         const filterVenta = req.query.venta;
-       
+       //a ver que tal sale lo del precio
+        const filterPrecio = req.query.precio;
         //paginacion
         //http://127.0.0.1:3000/api/anuncios?skip=2&limit=2
         const skip = req.query.skip;
@@ -35,16 +36,33 @@ router.get('/', async(req,res,next)=>{
         const sort = req.query.sort;
 
         const filter ={};
-        
-                
-        if (filterNombre){
-            filter.nombre = filterNombre;
+            
+        if (filterNombre){           
+            filter.nombre = new RegExp('^' +filterNombre, "i");            
         }
         if (filterVenta){
             filter.venta = filterVenta;
         }
-        
-        const lista = await Anuncio.listar(filter, skip, limit,sort,filterTag);
+        //a ver que tal el experimiento del precio
+        if(filterPrecio){
+            const precioFiltrado = {};
+            if (filterPrecio.includes('-')) {
+                const [min, max] = filterPrecio.split('-');
+                if (min && max) {
+                    precioFiltrado.$gte = min;
+                    precioFiltrado.$lte = max;
+                } else if (min) {
+                    precioFiltrado.$gte = min;
+                } else if (max) {
+                    precioFiltrado.$lte = max;
+                }
+            } else {
+                precioFiltrado = filterPrecio;
+            }
+            filter.precio= precioFiltrado;
+        };
+
+        const lista = await Anuncio.listar(filter, skip, limit,sort,filterTag, filterNombre);
         res.json({results:lista});
     } catch (error) {
         next(error);

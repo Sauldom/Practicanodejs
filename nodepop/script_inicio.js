@@ -39,7 +39,7 @@ async function initAnuncios(){
             tags: [ "lifestyle", "motor"]
         },
         {
-            nombre: "iPhone 3GS",
+            nombre: "iPhone3GS",
             venta: false,
             precio: 50.00,
             foto: "./public/images/iphone.png",
