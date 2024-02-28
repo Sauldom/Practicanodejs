@@ -3,6 +3,7 @@ var router = express.Router();
 var Anuncio = require('../models/Anuncio');
 
 
+
 /* GET home page. */
 router.get('/', async function(req, res, next) {
   try {

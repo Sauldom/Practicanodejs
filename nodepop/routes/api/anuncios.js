@@ -1,7 +1,7 @@
 var express =require('express');
 var router = express.Router();
 const Anuncio = require('../../models/Anuncio');
-
+const { query, validationResult } = require('express-validator');
 /**
  * metodos a crear
  * Lista de anuncios con posibilidad de paginación. Con filtros por tag, tipo de anuncio
@@ -17,6 +17,8 @@ const Anuncio = require('../../models/Anuncio');
 
 router.get('/', async(req,res,next)=>{
     try {
+        //validation
+        //validationResult(req).throw();
         //filtros
         //http://127.0.0.1:3000/api/anuncios?tag=lifestyle
         const filterTag=req.query.tag;
