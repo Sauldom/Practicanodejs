@@ -35,28 +35,28 @@ async function initAnuncios(){
             nombre: "Bicicleta",
             venta: true,
             precio: 230.15,
-            foto: "./public/images/bici.png",
+            foto: "images/bici.png",
             tags: [ "lifestyle", "motor"]
         },
         {
             nombre: "iPhone3GS",
             venta: false,
             precio: 50.00,
-            foto: "./public/images/iphone.png",
+            foto: "images/iphone3gs.png",
             tags: [ "lifestyle", "mobile"]
         },
         {
             nombre: "Dinosaurio",
             venta: true,
             precio: 45,
-            foto: "./public/images/dinosaurio.png",
+            foto: "images/dinosaurio.png",
             tags: [ "lifestyle", "juguete"]
             },
         {
             nombre: "Patines",
             venta: true,
             precio: 268.85,
-            foto: "./public/images/patines.png",
+            foto: "images/patines.png",
             tags: [ "lifestyle", "juguete"]
             },
     ]);

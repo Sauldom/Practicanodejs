@@ -15,7 +15,7 @@
           <p>Precio: <%= anuncio.precio %></p>
           <p>A la venta: <%=anuncio.venta ? 'Esta a la venta' : 'Esta en busqueda'%></p>
           <p>Foto: </p>
-            <img src="<%= anuncio.foto %>" alt="Foto del anuncio">
+            <img src="<%= anuncio.foto %>" alt=<%=anuncio.foto%>>
           <p>Tags: <%= anuncio.tags.join(', ') %></p>
         </li>
       <% }); %>
