@@ -93,13 +93,13 @@ router.get('/listar-tags', async(req,res,next)=>{
 router.post('/', 
     [body('nombre').optional().isString().withMessage('El nombre debe de ser un string'),
     body('venta').optional().isBoolean().withMessage('Venta debe ser un bool'),
-    body('tag').optional().isAlphanumeric().withMessage('La etiqueta solo puede contener caracteres alfanuméricos'),
+    body('tags').optional().matches(/^[\w\s,]+$/).withMessage('La etiqueta solo puede contener caracteres alfanuméricos y comas'),
 ]
     ,async(req, res, next)=>{
     try {
         validationResult(req).throw();
         const dato = req.body;
-        dato.tags = dato.tags.split(',');
+        dato.tags = dato.tags.split(',').map(item=>item.trim());
         const anuncio = new Anuncio(dato);
         console.log(anuncio);
         const anuncioGuardado = await anuncio.save();
