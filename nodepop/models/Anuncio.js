@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 
 const anuncioSchema = mongoose.Schema({
-    nombre: {type: String, unique: true},
+    nombre: {type: String, unique: true, require:true},
     venta: {type: Boolean},
     precio:{type: Number, index: true} ,
     foto: {type: String},

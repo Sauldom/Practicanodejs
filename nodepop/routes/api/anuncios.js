@@ -15,10 +15,16 @@ const { query, validationResult } = require('express-validator');
 //GET /api/anuncios
 //para listar todo para probar luego cambiaremos para hacerlo paginado
 
-router.get('/', async(req,res,next)=>{
+router.get('/',
+    [query('nombre').optional().isString().withMessage('El nombre debe de ser un string'),
+    query('venta').optional().isBoolean().withMessage('Venta debe ser un bool'),
+    query('tag').optional().isAlphanumeric().withMessage('La etiqueta solo puede contener caracteres alfanuméricos'),
+]
+    ,async(req,res,next)=>{
     try {
         //validation
-        //validationResult(req).throw();
+        validationResult(req).throw();
+        
         //filtros
         //http://127.0.0.1:3000/api/anuncios?tag=lifestyle
         const filterTag=req.query.tag;
@@ -47,7 +53,7 @@ router.get('/', async(req,res,next)=>{
         }
         //a ver que tal el experimiento del precio
         if(filterPrecio){
-            const precioFiltrado = {};
+            let precioFiltrado = {};
             if (filterPrecio.includes('-')) {
                 const [min, max] = filterPrecio.split('-');
                 if (min && max) {
@@ -62,7 +68,7 @@ router.get('/', async(req,res,next)=>{
                 precioFiltrado = filterPrecio;
             }
             filter.precio= precioFiltrado;
-        };
+        }
 
         const lista = await Anuncio.listar(filter, skip, limit,sort,filterTag, filterNombre);
         res.json({results:lista});

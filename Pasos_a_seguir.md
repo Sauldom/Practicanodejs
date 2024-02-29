@@ -129,5 +129,20 @@ cierra la conexion con la base de datos
 
 implementados todas las querys y los filtros
 
-ya se puede visualizar todo para ello hemos metido mano en index js y en views/indes.ejs
+ya se puede visualizar todo para ello hemos metido mano en index js y en views/index.ejs
 
+las fotos cuando tu sirves contenido estatico dsde express desde public por ejemplo
+te cuenta public como ruta relativa inicial a la hora de cargar las imagenes
+
+
+instalamos y configuramos eslint
+
+npm init @eslint/config
+
+una vez configurado podemos hacer que nos escuentre los errores en todos los archivos
+npx eslint .
+
+o en uno npx eslint archivo.js
+
+hemos pasado eslint y hemos corregido algunos fallos
+no habia muchos

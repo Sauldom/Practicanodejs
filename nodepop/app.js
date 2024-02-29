@@ -41,7 +41,15 @@ app.use(function(req, res, next) {
 
 // error handler
 app.use(function(err, req, res, next) {
-
+  //errores de validacion
+  if(err.array){
+    const errInfo = err.array({});
+    console.log(errInfo);
+    errInfo.forEach(element => {
+      err.message = `datos no validos - valor introducido ${element.value}  ${element.msg}`;
+    });
+    
+  }
 
   //modificar para que responda el fallo de API en formato JSON
   res.status(err.status || 500);
