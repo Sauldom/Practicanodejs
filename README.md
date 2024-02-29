@@ -56,13 +56,12 @@ http://localhost:3000/listar-tags
 
 
 # Introducir datos
+la introduccion la hemos dejado en la ruta del api tambien
 //POST /api/anuncios (body)
 
 # borrar datos
 la hemos dejado en el api de momento
 //DELETE  /api/anuncios/<_id>
-
-# borrar datos
 http://127.0.0.1:3000/api/anuncios/65e0b43484b7e21c581e29d3   la id del anuncio
 
 # Validacion de datos
@@ -70,5 +69,8 @@ http://127.0.0.1:3000/api/anuncios/65e0b43484b7e21c581e29d3   la id del anuncio
 Hacemos una validacion de 3 datos para probar tanto en los get query string como en
 el post al crear un nuevo anuncio en el body para probar parace que funcionan bien
 
-
+tambien hemos validado el POST de creacion de anuncios sobre todo al entrada de los tags 
+porque salen en un formato que no me gusta asi que haciendo un trim ,distinct y split  y 
+validando la entrada de datos parece que funciona adecuadamente, una vez probado aprece que luego
+a la hora de listar los tags ya salen correctamente
 
