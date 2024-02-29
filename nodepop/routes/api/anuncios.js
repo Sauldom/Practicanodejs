@@ -1,7 +1,7 @@
 var express =require('express');
 var router = express.Router();
 const Anuncio = require('../../models/Anuncio');
-const { query, validationResult } = require('express-validator');
+const { query, body, validationResult } = require('express-validator');
 /**
  * metodos a crear
  * Lista de anuncios con posibilidad de paginación. Con filtros por tag, tipo de anuncio
@@ -88,12 +88,20 @@ router.get('/listar-tags', async(req,res,next)=>{
 })
 
 //POST /api/anuncios (body)
-//para crear mas anuncios por si necesito probar que funciona
+//para crear mas anuncios 
 
-router.post('/', async(req, res, next)=>{
+router.post('/', 
+    [body('nombre').optional().isString().withMessage('El nombre debe de ser un string'),
+    body('venta').optional().isBoolean().withMessage('Venta debe ser un bool'),
+    body('tag').optional().isAlphanumeric().withMessage('La etiqueta solo puede contener caracteres alfanuméricos'),
+]
+    ,async(req, res, next)=>{
     try {
+        validationResult(req).throw();
         const dato = req.body;
+        dato.tags = dato.tags.split(',');
         const anuncio = new Anuncio(dato);
+        console.log(anuncio);
         const anuncioGuardado = await anuncio.save();
         res.json({result: anuncioGuardado});
 
@@ -103,7 +111,17 @@ router.post('/', async(req, res, next)=>{
 });
 
 
-
+//DELETE  /api/anuncios/<_id>
+//eliminar algunos anuncios para por si alguno se ha creado regulinchi
+router.delete('/:id', async(req, res, next)=>{
+    try {
+        const id = req.params.id;
+        await Anuncio.deleteOne({_id:id});
+        res.json();
+    } catch (error) {
+        next(error);
+    }
+})
 
 
 

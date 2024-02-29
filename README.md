@@ -24,32 +24,51 @@ hemos creado un par de metodos para probar un listado general y un introducir da
 # Introducir datos
     POST /api/anuncios (body)
 
-# filtros para peticiones
+# filtros para peticiones estan creadas en la ruta de la api
+# luego me di cuenta y tambien las meti en la vista de frontend
 tag
 http://127.0.0.1:3000/api/anuncios?tag=lifestyle
+http://localhost:3000/?tag=juguete
 
 nombre
 http://127.0.0.1:3000/api/anuncios?nombre=Patines
-        
+http://localhost:3000/?nombre=Patines        
+
 venta
 http://127.0.0.1:3000/api/anuncios?venta=true o false si no esta en venta
+http://localhost:3000/?venta=false
        
 # paginacion
 http://127.0.0.1:3000/api/anuncios?skip=2&limit=2
+http://localhost:3000/?skip=2&limit=2
         
 # ordenacion por precio
 http://127.0.0.1:3000/api/anuncios?sort=precio   o -precio para ascendente
+http://localhost:3000/?sort=precio
 
 # precios max min
 http://127.0.0.1:3000/api/anuncios?sort=precio&precio=10-100
+http://localhost:3000/?sort=precio&precio=10-100
 
 # listar tags
 http://127.0.0.1:3000/api/anuncios/listar-tags
+http://localhost:3000/listar-tags
+
 
 # Introducir datos
 //POST /api/anuncios (body)
 
+# borrar datos
+la hemos dejado en el api de momento
+//DELETE  /api/anuncios/<_id>
 
+# borrar datos
+http://127.0.0.1:3000/api/anuncios/65e0b43484b7e21c581e29d3   la id del anuncio
+
+# Validacion de datos
+
+Hacemos una validacion de 3 datos para probar tanto en los get query string como en
+el post al crear un nuevo anuncio en el body para probar parace que funcionan bien
 
 
 
