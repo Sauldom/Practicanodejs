@@ -1,3 +1,5 @@
+Guia de todo lo que he ido haciendo para dejarlo como registro para otras aplicaciones
+
 Instalando node
 
 terminal

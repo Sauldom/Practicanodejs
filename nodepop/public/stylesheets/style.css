@@ -6,7 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
-
+ul{
+  list-style-type: none;
+}
 
 .anuncio{
   display: flex;
@@ -17,7 +19,7 @@ a {
 .anuncio-objeto {
   border: 1px solid #ccc; 
   padding: 20px; 
-  width: calc(25% - 20px); 
+  width: 150px; 
 
 }
 .anuncio-objeto img {
