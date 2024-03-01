@@ -6,6 +6,22 @@ body {
 a {
   color: #00B7FF;
 }
-img{
-  max-width: 200px;
+
+
+.anuncio{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+}
+
+.anuncio-objeto {
+  border: 1px solid #ccc; 
+  padding: 20px; 
+  width: calc(25% - 20px); 
+
+}
+.anuncio-objeto img {
+  max-width: 100%;
+  max-height: 100%; 
+  object-fit: contain; 
 }

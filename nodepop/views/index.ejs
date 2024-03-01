@@ -8,15 +8,17 @@
     <h1><%= title %></h1>
     <p>Bienvenido a  <%= title %></p>  
 
-    <ul>
+    <ul class="anuncio">
       <% lista.forEach(anuncio => { %>
         <li>
+          <div class="anuncio-objeto">
           <p>Nombre: <%= anuncio.nombre %></p>
           <p>Precio: <%= anuncio.precio %></p>
           <p>A la venta: <%=anuncio.venta ? 'Esta a la venta' : 'Esta en busqueda'%></p>
           <p>Foto: </p>
             <img src="<%= anuncio.foto %>" alt=<%=anuncio.foto%>>
           <p>Tags: <%= anuncio.tags.join(', ') %></p>
+          </div>
         </li>
       <% }); %>
     </ul>
