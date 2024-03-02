@@ -24,10 +24,17 @@
 # Introducir datos
     POST /api/anuncios (body)
 
-# filtros para peticiones estan creadas en la ruta de la api
-# luego me di cuenta y tambien las meti en la vista de frontend en index.ejs pero no se
-# si eso es los correcto o se hace cambiando la ruta desde la carpeta de la api/anuncios
-# que en esa ruta devuelve un json
+ filtros para peticiones estan creadas en la ruta de la api
+luego me di cuenta y tambien las meti en la vista de frontend en index.ejs pero no se
+si eso es los correcto o se hace cambiando la ruta desde la carpeta de la api/anuncios
+que en esa ruta devuelve un json no se realmente como lo querias
+
+# filtros
+la vista principal es desde
+http://127.0.0.1:3000/
+
+
+
 
 # tag
 http://127.0.0.1:3000/api/anuncios?tag=lifestyle
@@ -77,3 +84,12 @@ porque salen en un formato que no me gusta asi que haciendo un trim ,distinct y 
 validando la entrada de datos parece que funciona adecuadamente, una vez probado parece que luego
 a la hora de listar los tags ya salen correctamente
 
+
+# correccion de errores
+
+hemos pasado eslint y corrregido alguno errores
+
+comprobamos sobre todo que los tags se meten como queremos porque a veces al introducir los datos
+no lo hacia como queriamos, hacemos las peticiones de comprobacion como en el pdf de la practica y 
+salen correctas
+La introduccion de datos ya se hace correctamente

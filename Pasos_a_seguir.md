@@ -133,7 +133,7 @@ implementados todas las querys y los filtros
 
 ya se puede visualizar todo para ello hemos metido mano en index js y en views/index.ejs
 
-las fotos cuando tu sirves contenido estatico dsde express desde public por ejemplo
+las fotos cuando tu sirves contenido estatico desde express desde public por ejemplo
 te cuenta public como ruta relativa inicial a la hora de cargar las imagenes
 
 
